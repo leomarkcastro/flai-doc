@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Accepts input from user"
+    "description": "Set of Nodes that takes input from the user."
   }
 }
