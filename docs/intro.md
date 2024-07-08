@@ -2,46 +2,18 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# What is FLAI?
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## The FLAI Philosophy
 
-## Getting Started
+**FLAI** is a powerful, easy to use and AI-powered Visual Chatbot Builder that allows you to create conversation flows and/or ChatGPT prompting that you can easily embed into your own website.
 
-Get started by **creating a new site**.
+![philosophy](/img/flai-philosophy.png)
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+![sample1](/img/flai-sample1.png)
 
-### What you'll need
+**FLAI** allows you to create flows like a typical chatbot. With a drag-and-drop editor, you can visually construct on how the chatbot will act, receive input, show output, generate image, categorize the user's answer.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+![sample2](/img/flai-sample2.png)
 
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+With **FLAI**, you can utilize AI to process data as you receive it from the user. Combine the processed data with other actions such as submitting REST API form, interpreting the user's sentiment or even generating suggestions based of preset options.

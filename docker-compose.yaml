@@ -1,0 +1,75 @@
+services:
+  # Database service (Postgres 14.5)
+  database:
+    image: postgres:14.5
+    volumes:
+      - data:/var/lib/postgresql/data
+    networks:
+      - backend
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+
+  # Redis service (Redis)
+  redis:
+    image: redis:alpine
+    networks:
+      - backend
+    volumes:
+      - cache:/data
+    restart: always
+
+  # Backend service (FLAI Server)
+  server:
+    image: flai-server
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+      - redis
+    networks:
+      - backend
+      - frontend
+    restart: always
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database:5432/${POSTGRES_DB}
+      REDIS_URL: redis://redis:6379
+      BASE_URL: http://server:3000
+      GRAPHQL_INSTROSPECTION: true
+      JWT_SECRET: secret
+      PAGE_URL: http://frontend:3000
+      LOG_REQUESTS: short
+      LOG_TODB: true
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      APP_NAME: FL-AI
+      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID}
+      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET}
+      GITHUB_REDIRECT_URI: http://frontend:3000/api/oauth/github/callback
+      CLIENT_URL: http://frontend:3000
+      CLIENT_OAUTH_REDIRECT_URL: http://frontend:3000/api/oauth/github/callback
+
+  # Frontend service (FLAI Frontend)
+  frontend:
+    image: flai-frontend
+    volumes:
+      - frontend:/app
+    ports:
+      - "3000:80"
+    networks:
+      - frontend
+    restart: always
+    environment:
+      REACT_APP_SERVER_URL: http://server:3000
+
+networks:
+  backend:
+  frontend:
+
+volumes:
+  data:
+  cache:
+  frontend:
