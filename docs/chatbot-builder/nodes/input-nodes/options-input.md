@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Options
+# Options Input
 
 If you want to provide the user a specific set of choices, then you can use this node to send user a list of possible options that they can take.
 

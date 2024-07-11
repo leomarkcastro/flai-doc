@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Parse Answer
+# Parse Input
 
 Takes the input message of the user and attempts to extract specific values from the message.
 
@@ -20,10 +20,10 @@ Takes the input message of the user and attempts to extract specific values from
 - **Use Conversation History**
 
   - (Unstable at the moment)
-  - Could be useful if you have a prior conversation and want to attempt to fetch information based of that. Although it would be recommended to use **Parse Conversation Node** instead.
+  - Could be useful if you have a prior conversation and want to attempt to fetch information based of that. Although it would be recommended to use [Variable From Introspect](/docs/chatbot-builder/nodes/variable-nodes/variable-introspect) instead.
 
 - **Check Last Prompt**
-  - Check if **lastPrompt** global variable is set, if it has a value, uses it instead. Else, halts and waits for user input.
+  - Check if **lastPrompt** chat status flag is set, if it has a value, uses it instead. Else, halts and waits for user input.
 
 ## Examples
 

@@ -14,13 +14,17 @@ There are multiple types of nodes that you can use to build the logic of your Ch
 
 The second most important faeture of the chat bot is that each conversation has it own status object that tracks the current status of the conversation. These values are accessible via handlebars and JS eval()
 
-## Fresh Chat Options
+## Special Flags
+
+Special Flags are special variables in the Chatbot Flow that can have a global effect on the conversation. It can range from having a global prompt template towards the overall conversation, setting max timeout or recursion limit, getting the immediate last message and other future features too.
+
+## Chat Starters
 
 You can configure the chat bot so that it will show a list of options to help the conversation get started in the right direction.
 
-## Global Variables
+## Multiple Pages
 
-Global Variables are special variables in the Chatbot Flow that can have a global effect on the conversation. It can range from having a global prompt template towards the overall conversation, setting max timeout or recursion limit, getting the immediate last message and other future features too.
+Your flow can span multiple pages. This can help you group a certain flow on its own and avoid clutering a single page with mixed logics
 
 ## Copy and Pasting
 

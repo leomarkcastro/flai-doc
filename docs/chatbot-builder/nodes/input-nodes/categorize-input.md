@@ -35,3 +35,18 @@ Takes the input message of the user as a whole, then categorizes it according to
 The Categorize Input Node was commonly used in-tandem with **Switch Case** node as they both can redirect user to what specific flow and action the bot should take.
 
 ![alt text](image-9.png)
+
+### Prompt
+
+This node uses this prompt to categorize the given input:
+
+```js
+var prompt = `
+  You will categorize the the following sentence into the correct category 
+  ( return a json object in output {category: <number>} ):
+
+   <list_of_categories_here>
+`;
+
+return json_object_of_category_key;
+```

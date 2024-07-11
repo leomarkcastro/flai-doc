@@ -1,8 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 ---
 
-# Link Node
+# Link Output
 
 Shows the 'Open Link' button to the user. Clicking on it will open a new tab based of the URL link you provided.
 
